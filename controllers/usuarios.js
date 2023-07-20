@@ -3,7 +3,7 @@ const { response } = require('express');
 
 const usuariosGet = (req, res = response) => {
 
-    const {q, nombre = 'No name', apikey, page = 1, limit} = req.query;
+    const {q, nombre = 'No name', apikey, page,limit,edad} = req.query;
 
     res.json(
         {
@@ -13,7 +13,8 @@ const usuariosGet = (req, res = response) => {
           nombre,
           apikey,
           page,
-          limit
+          limit,
+          edad
         }
     );
 }

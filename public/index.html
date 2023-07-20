@@ -1,11 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceso denegado</title>
+  <title>Acceso Denegado</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #ff0000; /* Color rojo */
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 3px;
+      font-family: "Arial", sans-serif;
+      border: 2px solid #ff0000; /* Color rojo */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Color rojo */
+    }
+
+    .calavera {
+      width: 200px;
+      height: 200px;
+      animation: abrirCerrar 2s infinite;
+    }
+
+    @keyframes abrirCerrar {
+      0%, 100% {
+        transform: scaleX(1);
+      }
+      50% {
+        transform: scaleX(-1);
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Acceso Denegado</h1>
+  <img class="calavera" src="https://www.gifsanimados.org/data/media/687/calavera-imagen-animada-0001.gif" alt="Calavera animada">
+  <h1>Acceso Denegado</h1>
+  <img class="calavera" src="https://www.gifsanimados.org/data/media/687/calavera-imagen-animada-0001.gif" alt="Calavera animada">
+  
 </body>
+
 </html>
