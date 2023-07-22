@@ -4,10 +4,8 @@ const dbConnect = async () => {
     try {
 
         await mongoose.connect(process.env.MONGODB_ATLAS,{
-            useNewUrlParser: true,
-            // useCreateIndex: true,
-            useUnifiedTopology: true,
-            // useFindAndModify: false
+            useNewUrlParser: true, 
+            useUnifiedTopology: true 
         });
         console.log('Base de datos --Online--');
         
@@ -15,7 +13,6 @@ const dbConnect = async () => {
         console.log(error);
         throw new Error('Error al iniciar la ---Base de Datos---');
     }
-
 }
 
 module.exports = {
