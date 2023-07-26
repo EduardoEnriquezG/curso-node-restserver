@@ -6,22 +6,29 @@ const mongoose = require('mongoose');
 
 const usuariosGet = async (req, res = response) => {
 
-    const { limit = 5, offset = 0 } = req.query;
+    const { limit = 5, offset = 0, id} = req.query;
     const query = {"estado": "true"};
 
-    const [ total, usuarios ]  = await Promise.all([
-        Usuario.countDocuments(query),
-        Usuario.find(query).limit()
-        .skip(Number(offset))
-        .limit(Number(limit))
-    ]); 
-
-    res.json(
-        {
-            total,
-            usuarios
-        }
-    );
+    if (id) {
+        const user = await Usuario.findById(id);
+        return res.json({user});
+        
+    } else {
+        const [ total, usuarios ]  = await Promise.all([
+            Usuario.countDocuments(query),
+            Usuario.find(query).limit()
+            .skip(Number(offset))
+            .limit(Number(limit))
+        ]); 
+    
+        return res.json(
+            {
+                total,
+                usuarios
+            }
+        );    
+    }
+    
 }
 
 const usuariosPost = async (req, res = response) => {
