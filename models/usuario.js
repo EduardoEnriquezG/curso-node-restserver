@@ -31,6 +31,10 @@ const UsuarioScheme = Schema({
         type: Boolean,
         default: false
     },
+    _id: {
+        type: Schema.Types.ObjectId,
+        auto: true, // Auto-generar ObjectId
+    },
 });
 
 UsuarioScheme.methods.toJSON = function() {

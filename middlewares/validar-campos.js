@@ -12,8 +12,24 @@ const validarCampos = (req, res, next) => {
     next();
 }
 
+const validarFormatoId = (req, res, next) => {
+    const {id} = req.query;
+    const idRegex = /^[0-9a-fA-F]{24}$/;
+  
+    if (!id) {
+        return res.status(400).json({msg: 'No hay información vinculada'});
+    }
+    if (!idRegex.test(id)) {
+      return res.status(400).json({ msg: 'Formato de ID inválido' });
+    }
+    
+  
+    next();
+  };
+
 
 
 module.exports = {
-    validarCampos
+    validarCampos,
+    validarFormatoId
 }
