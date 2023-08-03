@@ -2,6 +2,7 @@ const { validationResult } = require("express-validator");
 
 
 const validarCampos = (req, res, next) => {
+    console.log('Entro a la ultima validacion');
 
     const errors = validationResult(req);
 
